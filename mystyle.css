@@ -1,0 +1,63 @@
+.lovelyInput{
+	border: 0;
+	border-bottom: 1px solid white;
+	font-size:40pt;
+	padding: 10px;
+	margin: 20px;
+	background: transparent;
+
+}
+.button{
+	background: transparent !important;
+	border: 0;
+}
+#overlay{position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.5);
+        z-index: 10000;
+        vertical-align: middle;
+        text-align: center;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold}
+.glyphicon {
+    font-size: 25px;
+}
+#dataHolder{
+	padding-top: 40px
+}
+.test{
+	display: none;
+}
+.test li {
+	font-size: 170%;
+}
+body{
+	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("4425491-snowy-mountains-wallpapers.jpg");
+	background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+	background-size: initial;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: white;
+}
+
+.glyphicon.spinning {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+textarea, input { outline: none; }
+-webkit-appearance:none 
