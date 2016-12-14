@@ -11,6 +11,28 @@
 	background: transparent !important;
 	border: 0;
 }
+a {
+    text-decoration: none;
+}
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: grey;
+}
+
+/* selected link */
+a:active {
+    color: white;
+}
 #overlay{position: fixed;
         top: 0px;
         left: 0px;

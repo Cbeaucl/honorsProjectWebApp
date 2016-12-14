@@ -1,5 +1,5 @@
 var count = 0;
-
+var url = "http://127.0.0.1:5000"
 function loadTFIDF() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -7,14 +7,15 @@ function loadTFIDF() {
             var obj = JSON.parse(this.responseText);
             var cList = $('#TFIDFlist')
             $.each(obj.simdocs, function(i) {
-                var li = $('<li/>').text(obj.simdocs[i]).appendTo(cList);
+                hreff = "https://en.wikipedia.org/?curid="+obj.simdocs[i][0];
+                var li = $('<li/>').append('<a href='+hreff+'>'+obj.simdocs[i]).appendTo(cList);
             });
             $("#TFIDFdiv").fadeIn();
         }
     };
     var name;
     name = document.getElementById("searchTerm").value;
-    xhttp.open("GET", "http://127.0.0.1:5000/get_TFIDF_Data?documentName=" + name, true);
+    xhttp.open("GET", url+"/get_TFIDF_Data?documentName=" + name, true);
     xhttp.send();
 }
 
@@ -23,16 +24,17 @@ function loadLDA() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
-            var cList = $('#LDAlist')
+            var cList = $('#LDAlist');
             $.each(obj.simdocs, function(i) {
-                var li = $('<li/>').text('<a href="https://en.wikipedia.org/?curid="'+obj.simdocs[i][0]+'/>',simdocs[i]).appendTo(cList);
+                hreff = "https://en.wikipedia.org/?curid="+obj.simdocs[i][0];
+                var li = $('<li/>').append('<a href='+hreff+'>'+obj.simdocs[i]).appendTo(cList);
             });
             $("#LDAdiv").fadeIn();
         }
     };
     var name;
     name = document.getElementById("searchTerm").value;
-    xhttp.open("GET", "http://127.0.0.1:5000/get_LDA_Data?documentName=" + name, true);
+    xhttp.open("GET", url + "/get_LDA_Data?documentName=" + name, true);
     xhttp.send();
 }
 
@@ -43,7 +45,8 @@ function loadLSA() {
             var obj = JSON.parse(this.responseText);
             var cList = $('#LSAlist')
             $.each(obj.simdocs, function(i) {
-                var li = $('<li/>').text(obj.simdocs[i]).appendTo(cList);
+                hreff = "https://en.wikipedia.org/?curid="+obj.simdocs[i][0];
+                var li = $('<li/>').append('<a href='+hreff+'>'+obj.simdocs[i]).appendTo(cList);
             });
             $("#LSAdiv").fadeIn();
             document.getElementById("loadingWheel").style.display = 'none';
@@ -51,7 +54,7 @@ function loadLSA() {
     };
     var name;
     name = document.getElementById("searchTerm").value;
-    xhttp.open("GET", "http://127.0.0.1:5000/get_LSA_Data?documentName=" + name, true);
+    xhttp.open("GET", url + "/get_LSA_Data?documentName=" + name, true);
     xhttp.send();
 }
 
