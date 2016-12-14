@@ -1,5 +1,5 @@
 var count = 0;
-var url = "http://1467f657.ngrok.io"
+var url = "https://c29d9e74.ngrok.io"
 function loadTFIDF() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
