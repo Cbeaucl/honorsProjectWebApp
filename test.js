@@ -25,7 +25,7 @@ function loadLDA() {
             var obj = JSON.parse(this.responseText);
             var cList = $('#LDAlist')
             $.each(obj.simdocs, function(i) {
-                var li = $('<li/>').text(obj.simdocs[i]).appendTo(cList);
+                var li = $('<li/>').text('<a href="https://en.wikipedia.org/?curid="'+obj.simdocs[i][0]+'/>',simdocs[i]).appendTo(cList);
             });
             $("#LDAdiv").fadeIn();
         }
